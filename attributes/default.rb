@@ -9,3 +9,5 @@ default.tmux.user_conf_group = "root"
 default.tmux.user_conf_path = "/root/.tmux.conf"
 default.tmux.user_conf_user = "root"
 default.tmux.version = "2.0"
+
+default.tmux_plugins.plugins = {}

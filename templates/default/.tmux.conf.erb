@@ -67,7 +67,7 @@ bind-key C-y run 'tmux save-buffer - | xclip -i -selection clipboard'
 bind-key / copy-mode \; command-prompt -p "Search Up:" 'send-keys ? C-u %% Enter'
 
 set -g @tpm_plugins "\
-  <%= node.tmux_plugins.plugins.join(" \\\n  ") %> \
+  <%= node.tmux_plugins.plugins.keys.join(" \\\n  ") %> \
 "
 
 # initializes TMUX plugin manager
