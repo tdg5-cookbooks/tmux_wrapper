@@ -56,14 +56,14 @@ bind-key C-u copy-mode -u
 bind-key C-r source-file ~/.tmux.conf
 
 # vim copy-mode key bindings for visual mode and yank
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-selection
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-selection
 
 # Export tmux buffer to system clipboard
-bind-key C-y run 'tmux save-buffer - | xclip -i -selection clipboard'
+bind-key C-y run 'tmux save-buffer - | xsel -i -b'
 
 # Open custom reverse search w/ history
-bind-key / copy-mode \; command-prompt -p "Search Up:" 'send-keys ? C-u %% Enter'
+bind-key / copy-mode \; command-prompt -p "Search Up:" 'send -X search-backward %%'
 
 set -g @tpm_plugins "\
   <%= node['tmux_plugins']['plugins'].keys.join(" \\\n  ") %> \
